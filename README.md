@@ -52,6 +52,7 @@ Implementation notes:
   - `e2e.test.ts` for end-to-end testing with real HTTP calls to the TomTom API server. The `yarn test e2e.test` command can be used to only run these end-to-end tests.
 - Tests coverage are generated in the `coverage` folder using `yarn test --coverage`.
 - The library can be built using the `yarn run build` command. The compiled JS code and type definitions are output to the `dist` folder and the `package.json` file is configured to reference these files.
+- Continuous Integration is setup using GitHub Workflows to build, lint and run the unit tests on Node v22 (latest LTS) and v20 (previous LTS) on commits and pull requests.
 
 Example usage:
 ==============

@@ -94,9 +94,13 @@ describe('getParams()', () => {
 	});
 
 	it('throw is the API key is not provided and not present in environment variables', () => {
+		const originalKey = process.env.TOMTOM_API_KEY;
+		process.env.TOMTOM_API_KEY = '';
 		expect(() => getParams({})).toThrow(
 			'Missing API key or TOMTOM_API_KEY environment variable',
 		);
+		// Restore environment variable
+		process.env.TOMTOM_API_KEY = originalKey;
 	});
 
 	it('gets the API key from environment variables if not provided', () => {
